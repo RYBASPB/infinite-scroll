@@ -1,4 +1,4 @@
-export interface NpmObjects {
+export interface NpmObject {
   package: Package;
   flags: Flags;
   score: Score;
