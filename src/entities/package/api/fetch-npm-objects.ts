@@ -1,5 +1,6 @@
 import { NpmObject } from 'entities/package/model/interfaces/npm-package.ts';
 import { getUrl, RequestParams } from 'shared/api/request.ts';
+import { DIST_URL } from 'shared/constants/api.ts';
 
 interface NpmResponse {
   time: string;
@@ -11,7 +12,7 @@ export async function fetchNpmObjects(params: RequestParams): Promise<NpmRespons
   params.size = params.size ?? 30;
   params.from = params.from ?? 0;
   try {
-    const url = getUrl(params);
+    const url = getUrl(DIST_URL, params);
     const response = await fetch(url, {
       method: 'GET',
     });

@@ -1,4 +1,4 @@
-import { DIST_URL } from 'shared/constants/api.ts';
+import { NO_PARAMS, NO_URL } from 'shared/constants/api.ts';
 
 export interface RequestParams {
   text: string;
@@ -6,18 +6,18 @@ export interface RequestParams {
   from?: number;
 }
 
-export function getUrl(requestParams: RequestParams): string {
+export function getUrl(baseUrl: string, requestParams: RequestParams): string {
+  if (!requestParams) {
+    return NO_PARAMS
+  }
+  if (!baseUrl) {
+    return NO_URL;
+  }
   const params = new URLSearchParams(Object.entries(requestParams));
-  return `${prepareDistUrl(DIST_URL)}?${params.toString()}`;
+  return `${prepareDistUrl(baseUrl)}?${params.toString()}`;
 }
 
 function prepareDistUrl(url: string) {
   const lastChar = url.length > 0 ? url[url.length - 1] : '';
   return lastChar === '/' ? url.slice(0, url.length - 1) : url;
 }
-
-getUrl({
-  text: 'ewr',
-  size: 50,
-  from: 0,
-});
