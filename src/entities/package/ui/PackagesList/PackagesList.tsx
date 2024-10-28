@@ -3,7 +3,7 @@ import { useStore } from 'entities/package/model/store/packages-store-context.ts
 import { useEffect, useState } from 'react';
 
 const PackagesList = observer(() => {
-  const { error, fetchObjects, npmObjects, npmObjectsCount } = useStore();
+  const { fetchObjects, npmObjects, npmObjectsCount } = useStore();
   const size = 30;
   const [from, setFrom] = useState(0);
 
@@ -13,7 +13,6 @@ const PackagesList = observer(() => {
       from,
       size,
     }).then(() => setFrom((prevState) => prevState + size));
-    console.log('added objects', 'from', from, 'size', size, 'length', npmObjects.length);
   };
 
   useEffect(() => {
@@ -24,6 +23,7 @@ const PackagesList = observer(() => {
       size,
     }).then(() => setFrom(size));
   }, []);
+
   return (
     <div>
       {npmObjectsCount}
