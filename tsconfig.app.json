@@ -19,7 +19,14 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Paths */
+    "paths": {
+      "src/*": ["./src/*"],
+      "shared/*": ["./src/shared/*"],
+      "entities/*": ["./src/entities/*"]
+    }
   },
   "include": ["src"]
 }
