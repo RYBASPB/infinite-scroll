@@ -1,1 +1,0 @@
-export const DIST_URL = 'https://registry.npmjs.com/-/v1/search?text=ts&size=25&from=25'
