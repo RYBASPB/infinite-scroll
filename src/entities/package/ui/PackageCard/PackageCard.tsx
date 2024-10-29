@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from 'entities/package/model/store/packages-store-context.ts';
 
 const PackageCard = observer(({ object }: { object: NpmObject }) => {
-  const { deleteObject } = useStore();
+  const { deleteObject, editObject } = useStore();
   return (
     <div>
       <div
@@ -13,7 +13,13 @@ const PackageCard = observer(({ object }: { object: NpmObject }) => {
       >
         {JSON.stringify(object)}
       </div>
-      <button>Edit</button>
+      <button
+        onClick={
+          () => editObject(object.package.name, object) // temporal
+        }
+      >
+        Edit
+      </button>
       <button onClick={() => deleteObject(object.package.name)}>Delete</button>
     </div>
   );
