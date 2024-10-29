@@ -5,7 +5,12 @@ import tsConfig from './tsconfig.app.json' with { type: "json" };
 export default {
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.tsx?$": "ts-jest",
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "tsconfig.app.json",
+      }
+    ],
   },
   roots: ['<rootDir>'],
   modulePaths: [tsConfig.compilerOptions.baseUrl],

@@ -19,9 +19,9 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "src/*": ["./src/*"],
-      "shared/*": ["./src/shared/*"],
-      "entities/*": ["./src/entities/*"]
+      "src/*": ["src/*"],
+      "shared/*": ["src/shared/*"],
+      "entities/*": ["src/entities/*"]
     }
   },
   "include": ["src", "./jest.setup.ts"]
