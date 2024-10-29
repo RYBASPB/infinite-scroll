@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest';
 import { getUrl } from 'shared/api/request.ts';
 
 describe('test url creation', () => {
