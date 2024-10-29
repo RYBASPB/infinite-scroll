@@ -1,7 +1,9 @@
 import { NpmObject } from 'entities/package/model/interfaces/npm-package.ts';
 import { observer } from 'mobx-react-lite';
+import { useStore } from 'entities/package/model/store/packages-store-context.ts';
 
 const PackageCard = observer(({ object }: { object: NpmObject }) => {
+  const { deleteObject } = useStore();
   return (
     <div>
       <div
@@ -12,7 +14,7 @@ const PackageCard = observer(({ object }: { object: NpmObject }) => {
         {JSON.stringify(object)}
       </div>
       <button>Edit</button>
-      <button>Delete</button>
+      <button onClick={() => deleteObject(object.package.name)}>Delete</button>
     </div>
   );
 });

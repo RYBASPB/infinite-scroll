@@ -23,4 +23,9 @@ export class PackagesStore {
     }
     this.error = PACKAGES_NOT_FETCHED;
   }
+
+  deleteObject = (nameToDelete: string): void => {
+    this.npmObjects = this.npmObjects.filter(object => object.package.name !== nameToDelete)
+    console.log("deleted")
+  }
 }
