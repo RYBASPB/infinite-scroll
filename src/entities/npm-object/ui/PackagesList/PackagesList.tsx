@@ -1,10 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useStore } from 'npm-object/model/store/npm-objects-store-context.ts';
 import PackageCard from 'npm-object/ui/PackageCard/PackageCard.tsx';
+import {
+  PanelSpinner,
+  SimpleGrid,
+  useAdaptivityWithJSMediaQueries, ViewWidth,
+} from '@vkontakte/vkui';
 
 const PackagesList = observer(() => {
-  const { fetchObjects, npmObjects, npmObjectsCount } = useStore();
+  const { fetchObjects, npmObjects } = useStore();
   const size = 30;
   const [from, setFrom] = useState(0);
   const targetElement = useRef(null);
@@ -58,16 +63,26 @@ const PackagesList = observer(() => {
     }
   }, [loadMore]);
 
+  const { viewWidth } = useAdaptivityWithJSMediaQueries();
+  const selectColumns = useMemo(() => {
+    if (viewWidth === ViewWidth.SMALL_TABLET) {
+      return 2;
+    }
+    if (viewWidth > ViewWidth.SMALL_TABLET) {
+      return 3;
+    }
+    return 1;
+  }, [viewWidth])
+
   return (
-    <div>
-      {npmObjectsCount}
-      {npmObjects.map((object) => (
-       <PackageCard object={object} />
-      ))}
-      <div ref={targetElement}>Loading screen</div>
-      {from}
-      <button onClick={addObjects}>Добавить</button>
-    </div>
+    <>
+      <SimpleGrid columns={selectColumns} gap={10}>
+        {npmObjects.map((object) => (
+          <PackageCard key={object.package.name} object={object} />
+        ))}
+      </SimpleGrid>
+      <PanelSpinner getRootRef={targetElement}>Идет загрузка</PanelSpinner>
+    </>
   );
 });
 
