@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import { useStore } from 'npm-object/model/store/npm-objects-store-context.ts';
 import PackageCard from 'npm-object/ui/PackageCard/PackageCard.tsx';
 import {
   PanelSpinner,
   SimpleGrid,
   useAdaptivityWithJSMediaQueries, ViewWidth,
 } from '@vkontakte/vkui';
+import { useStore } from 'shared/model/store/root-store-context.ts';
 
 const PackagesList = observer(() => {
-  const { fetchObjects, npmObjects } = useStore();
+  const { npmObjectsStore } = useStore();
+  const { fetchObjects, npmObjects } = npmObjectsStore;
   const size = 30;
   const [from, setFrom] = useState(0);
   const targetElement = useRef(null);
