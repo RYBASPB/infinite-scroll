@@ -8,6 +8,15 @@ importers:
 
   .:
     dependencies:
+      '@vkontakte/icons':
+        specifier: ^2.151.0
+        version: 2.151.0(react@18.3.1)
+      '@vkontakte/vkui':
+        specifier: ^6.7.3
+        version: 6.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       mobx:
         specifier: ^6.13.5
         version: 6.13.5
@@ -453,6 +462,21 @@ packages:
     resolution: {integrity: sha512-HFZ4Mp26nbWk9d/BpvP0YNL6W4UoZF0VFcTw/aPPA8RpOxeFQgK+ClABGgAUXs9Y/RGX/l1vOmrqz1MQt9MNuw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@floating-ui/core@1.6.8':
+    resolution: {integrity: sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==}
+
+  '@floating-ui/dom@1.6.12':
+    resolution: {integrity: sha512-NP83c0HjokcGVEMeoStg317VD9W7eDlGK7457dMBANbKA6GJZdc7rjujdgqzTaz93jkGgc5P/jeWbaCHnMNc+w==}
+
+  '@floating-ui/react-dom@2.1.2':
+    resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.8':
+    resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
+
   '@humanfs/core@0.19.0':
     resolution: {integrity: sha512-2cbWIHbZVEweE853g8jymffCA+NCMiuqeECeBBLm8dg2oFdjuGJhgN4UAbI+6v0CKbbhvtXA4qV8YR5Ji86nmw==}
     engines: {node: '>=18.18.0'}
@@ -665,6 +689,9 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
+  '@swc/helpers@0.5.13':
+    resolution: {integrity: sha512-UoKGxQ3r5kYI9dALKJapMmuK+1zWM/H17Z1+iwnNmzcJRnfFuevZs375TA5rW31pu4BS4NoSy1fRsexDXfWn5w==}
+
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
@@ -836,10 +863,36 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
+  '@vkontakte/icons-sprite@2.3.0':
+    resolution: {integrity: sha512-YzAcdZdcM8DqgTMDOSBqfXN72vEaCe6YfdRLH4DAwB0niRQrly6E/2AyYaiIowsvCklF8O0DmpVp84mibdQEQg==}
+    peerDependencies:
+      react: ^16.9.34 || ^17 || ^18
+
+  '@vkontakte/icons@2.151.0':
+    resolution: {integrity: sha512-WiW1ctdhl16KPRwt2hkCk+GBM8hcazNlQojtOWnlwd+uYWZO76SQ3NY5byeqlyxmsZww+jy34eKJxN4geBK1HA==}
+    peerDependencies:
+      react: ^16.9.34 || ^17 || ^18
+
   '@vkontakte/prettier-config@0.2.1':
     resolution: {integrity: sha512-eKAwPUGccR2zNIH+aEhTLFi1CSphACwYuCvzhcbYbwdwtgfLg+jSylpxN2ecAXga+/WjQeO2Us//N7TnWBGToA==}
     peerDependencies:
       prettier: ^3.0.0
+
+  '@vkontakte/vkjs@1.3.0':
+    resolution: {integrity: sha512-GfwCC2JNetiiFZcEWyK9LOy8PHUKK2+L8VSJMbXKnpi4LnkxXYMEBsun1rEKGliPITYZC50nLm7jhxbCgcxVuw==}
+    engines: {yarn: ^1.21.1}
+
+  '@vkontakte/vkui-floating-ui@0.2.4':
+    resolution: {integrity: sha512-61YTYsKpOr07mzH5+NP0UYdlXmdjf1LSsE7OTT6/982Gmij37NUy2qZVCvaXIMBIRcnggbnJCTYCDHuFQbhFlg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+
+  '@vkontakte/vkui@6.7.3':
+    resolution: {integrity: sha512-/hOk0ZI7WwRZlgCZIcr1uFB1zj8TAPMxZ7KtVkhINOPq6svY5BfekB4bZ9rJOiGctA8IdF9cT5IMxGm1XFd5EA==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   abab@2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
@@ -1034,6 +1087,10 @@ packages:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
 
+  clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
+    engines: {node: '>=6'}
+
   co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
@@ -1101,6 +1158,12 @@ packages:
   data-view-byte-offset@1.0.0:
     resolution: {integrity: sha512-t/Ygsytq+R995EJ5PZlD4Cu56sWa8InXySaViRzw9apusqsOO2bQP+SbYzAhR0pFKoB+43lYy8rWban9JSuXnA==}
     engines: {node: '>= 0.4'}
+
+  date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
@@ -2454,6 +2517,9 @@ packages:
       typescript:
         optional: true
 
+  tslib@2.8.0:
+    resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -2991,6 +3057,23 @@ snapshots:
     dependencies:
       levn: 0.4.1
 
+  '@floating-ui/core@1.6.8':
+    dependencies:
+      '@floating-ui/utils': 0.2.8
+
+  '@floating-ui/dom@1.6.12':
+    dependencies:
+      '@floating-ui/core': 1.6.8
+      '@floating-ui/utils': 0.2.8
+
+  '@floating-ui/react-dom@2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/dom': 1.6.12
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@floating-ui/utils@0.2.8': {}
+
   '@humanfs/core@0.19.0': {}
 
   '@humanfs/node@0.16.5':
@@ -3266,6 +3349,10 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
+  '@swc/helpers@0.5.13':
+    dependencies:
+      tslib: 2.8.0
+
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.26.0
@@ -3480,9 +3567,41 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@vkontakte/icons-sprite@2.3.0(react@18.3.1)':
+    dependencies:
+      '@swc/helpers': 0.5.13
+      react: 18.3.1
+
+  '@vkontakte/icons@2.151.0(react@18.3.1)':
+    dependencies:
+      '@vkontakte/icons-sprite': 2.3.0(react@18.3.1)
+      react: 18.3.1
+
   '@vkontakte/prettier-config@0.2.1(prettier@3.3.3)':
     dependencies:
       prettier: 3.3.3
+
+  '@vkontakte/vkjs@1.3.0':
+    dependencies:
+      '@swc/helpers': 0.5.13
+      clsx: 2.1.1
+
+  '@vkontakte/vkui-floating-ui@0.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@floating-ui/react-dom': 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@swc/helpers': 0.5.13
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  '@vkontakte/vkui@6.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@swc/helpers': 0.5.13
+      '@vkontakte/icons': 2.151.0(react@18.3.1)
+      '@vkontakte/vkjs': 1.3.0
+      '@vkontakte/vkui-floating-ui': 0.2.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      date-fns: 3.6.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   abab@2.0.6: {}
 
@@ -3732,6 +3851,8 @@ snapshots:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
 
+  clsx@2.1.1: {}
+
   co@4.6.0: {}
 
   collect-v8-coverage@1.0.2: {}
@@ -3808,6 +3929,10 @@ snapshots:
       call-bind: 1.0.7
       es-errors: 1.3.0
       is-data-view: 1.0.1
+
+  date-fns@3.6.0: {}
+
+  date-fns@4.1.0: {}
 
   debug@4.3.7:
     dependencies:
@@ -5455,6 +5580,8 @@ snapshots:
   tsconfck@3.1.4(typescript@5.6.3):
     optionalDependencies:
       typescript: 5.6.3
+
+  tslib@2.8.0: {}
 
   type-check@0.4.0:
     dependencies:
