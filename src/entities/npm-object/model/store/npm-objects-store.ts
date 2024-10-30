@@ -28,7 +28,7 @@ export class NpmObjectsStore {
     this.rootStore.npmObjectsStore.error = PACKAGES_NOT_FETCHED;
   };
 
-  editObject = (prevObjectName: string, editedObject: NpmObject) => {
+  editObject = (_: string, editedObject: NpmObject) => {
     this.rootStore.npmObjectsStore.activeObject = editedObject;
     this.rootStore.appStore.setEditView();
     // this.rootStore.npmObjectsStore.npmObjects[objectIndex] = editedObject;
