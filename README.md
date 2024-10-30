@@ -1,50 +1,44 @@
-# React + TypeScript + Vite
+# Список
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Использованные технологии
 
-Currently, two official plugins are available:
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-## Expanding the ESLint configuration
+![MobX](https://img.shields.io/badge/mobx-%23FF9955?style=for-the-badge&logo=mobx&logoColor=white)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-- Configure the top-level `parserOptions` property like this:
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Любой UI kit - обосновать почему
+
+## API
+
+[NPM REGISTRY-API](https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md)
+
+`GET https://registry.npmjs.com/-/v1/search/-/v1/search`
+> 
+| Name     | Value     | Kind     | Required?     | Notes     |
+|------    |-------    |------    |-----------    |-------    |
+| text | String | **Query** | ❌         | full-text search to apply |
+| size | integer | **Query** | ❌         | how many results should be returned (default 20, max 250) |
+| from | integer | **Query** | ❌         | offset to return results from |
+| quality | float | **Query** | ❌         | how much of an effect should quality have on search results |
+| popularity | float | **Query** | ❌         | how much of an effect should popularity have on search results |
+| maintenance | float | **Query** | ❌         | how much of an effect should maintenance have on search results |
+
+## Функционал
+
+- [x] Запросы через fetch
+- [x] Редактирование элемента
+- [x] Удаление элемента
+- [ ] Индикация подгрузки данных
+- [ ] Unit тестирование функциональности 
