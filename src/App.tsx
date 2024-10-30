@@ -1,5 +1,5 @@
 import './App.css'
-import { PackagesContainer } from 'entities/package/ui/PackagesContainer/PackagesContainer.tsx';
+import { PackagesContainer } from 'npm-object/ui/PackagesContainer/PackagesContainer.tsx';
 
 function App() {
   return (

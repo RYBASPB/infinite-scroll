@@ -1,4 +1,4 @@
-import { NpmObject } from 'entities/package/model/interfaces/npm-package.ts';
+import { NpmObject } from 'npm-object/model/interfaces/npm-object.ts';
 import { getUrl, RequestParams } from 'shared/api/request.ts';
 import { DIST_URL } from 'shared/constants/api.ts';
 

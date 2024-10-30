@@ -21,7 +21,8 @@
     "paths": {
       "src/*": ["src/*"],
       "shared/*": ["src/shared/*"],
-      "entities/*": ["src/entities/*"]
+      "entities/*": ["src/entities/*"],
+      "npm-object/*": ["src/entities/npm-object/*"]
     }
   },
   "include": ["src", "./jest.setup.ts"]

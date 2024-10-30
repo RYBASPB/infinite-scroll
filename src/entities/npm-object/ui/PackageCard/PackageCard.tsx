@@ -1,6 +1,6 @@
-import { NpmObject } from 'entities/package/model/interfaces/npm-package.ts';
+import { NpmObject } from 'npm-object/model/interfaces/npm-object.ts';
 import { observer } from 'mobx-react-lite';
-import { useStore } from 'entities/package/model/store/packages-store-context.ts';
+import { useStore } from 'npm-object/model/store/npm-objects-store-context.ts';
 
 const PackageCard = observer(({ object }: { object: NpmObject }) => {
   const { deleteObject, editObject } = useStore();

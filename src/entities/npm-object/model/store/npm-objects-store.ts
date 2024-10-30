@@ -1,10 +1,10 @@
 import { makeAutoObservable } from 'mobx';
-import { NpmObject } from 'entities/package/model/interfaces/npm-package.ts';
-import { fetchNpmObjects } from 'entities/package/api/fetch-npm-objects.ts';
+import { NpmObject } from 'npm-object/model/interfaces/npm-object.ts';
+import { fetchNpmObjects } from 'npm-object/api/fetch-npm-objects.ts';
 import { PACKAGES_NOT_FETCHED } from 'shared/constants/errors.ts';
 import { RequestParams } from 'shared/api/request.ts';
 
-export class PackagesStore {
+export class NpmObjectsStore {
   npmObjects: NpmObject[] = [];
   npmObjectsCount = 0;
   error: string | undefined;

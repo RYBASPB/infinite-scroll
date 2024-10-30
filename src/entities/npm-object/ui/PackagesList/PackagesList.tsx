@@ -1,7 +1,7 @@
-import { observer } from 'mobx-react-lite';
-import { useStore } from 'entities/package/model/store/packages-store-context.ts';
 import { useEffect, useRef, useState } from 'react';
-import PackageCard from 'entities/package/ui/PackageCard/PackageCard.tsx';
+import { observer } from 'mobx-react-lite';
+import { useStore } from 'npm-object/model/store/npm-objects-store-context.ts';
+import PackageCard from 'npm-object/ui/PackageCard/PackageCard.tsx';
 
 const PackagesList = observer(() => {
   const { fetchObjects, npmObjects, npmObjectsCount } = useStore();
