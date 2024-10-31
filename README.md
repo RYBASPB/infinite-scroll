@@ -2,6 +2,10 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/RYBASPB/infinite-scroll?style=for-the-badge)
 
+
+## Демо
+
+https://gopy.tech
 ## Использованные технологии
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -47,7 +51,6 @@
 
 - [x] Абсолютные пути
 - [x] Prettier с конфигом VK
--
 
 ## UI библиотека
 
