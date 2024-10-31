@@ -27,11 +27,7 @@ describe('Packages List', () => {
       </RootStoreContext.Provider>,
     );
     await act(() =>
-      store.npmObjectsStore.fetchObjects({
-        text: 'ts',
-        from: 0,
-        size: 10,
-      }),
+      store.npmObjectsStore.fetchObjects('ts'),
     );
     rerender(
       <RootStoreContext.Provider value={store}>

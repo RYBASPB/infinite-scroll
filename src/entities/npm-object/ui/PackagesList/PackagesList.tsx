@@ -68,7 +68,7 @@ const PackagesList = observer(() => {
           <PackageCard key={object.package.name} object={object} data-testid="list-item"/>
         ))}
       </SimpleGrid>
-      <PanelSpinner getRootRef={targetElement}>Идет загрузка</PanelSpinner>
+      <PanelSpinner getRootRef={targetElement}>Loading...</PanelSpinner>
     </>
   );
 });
