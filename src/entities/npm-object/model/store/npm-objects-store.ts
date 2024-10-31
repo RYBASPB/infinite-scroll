@@ -22,11 +22,15 @@ export class NpmObjectsStore {
     if (fetched) {
       const { total, objects } = fetched;
       this.rootStore.npmObjectsStore.npmObjectsCount = total;
-      this.rootStore.npmObjectsStore.npmObjects.push(...objects);
+      this.addObjects(...objects);
       return;
     }
     this.rootStore.npmObjectsStore.error = PACKAGES_NOT_FETCHED;
   };
+
+  addObjects = (...objects: NpmObject[]) => {
+    this.rootStore.npmObjectsStore.npmObjects.push(...objects);
+  }
 
   editObject = (_: string, editedObject: NpmObject) => {
     this.rootStore.npmObjectsStore.activeObject = editedObject;
