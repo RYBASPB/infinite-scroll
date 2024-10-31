@@ -1,6 +1,6 @@
 export interface NpmObject {
   package: Package;
-  flags: Flags;
+  flags?: Flags;
   score: Score;
   searchScore: number;
 }
@@ -12,7 +12,7 @@ export interface Package {
   keywords?: (string)[] | null;
   date: string;
   links?: Links;
-  publisher: MaintainersEntityOrPublisher;
+  publisher?: MaintainersEntityOrPublisher;
   maintainers?: (MaintainersEntityOrPublisher)[] | null;
 }
 export interface Links {
