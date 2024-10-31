@@ -16,7 +16,7 @@ const PackageCard = observer(({ object, ...props }: { object: NpmObject }) => {
     <Card mode="shadow" {...props}>
       <div className={styles.card__inner}>
         <Title level="3">{name}</Title>
-        {[`v: ${version}`, description, lightFormat(new Date(date), 'yyyy-MM-dd')].map((prop) => (
+        {[`v: ${version}`, description, date ? lightFormat(new Date(date), 'yyyy-MM-dd'): ''].map((prop) => (
           <Paragraph key={prop} Component="p" normalize>
             {prop}
           </Paragraph>
@@ -50,7 +50,7 @@ const PackageCard = observer(({ object, ...props }: { object: NpmObject }) => {
           <Progress aria-labelledby="score-final" value={score.final * 100} />
         </FormItem>
         <div className={styles.button__container}>
-          <IconButton aria-label="edit" onClick={() => editObject(name, object)}>
+          <IconButton aria-label="edit" onClick={() => editObject(object)}>
             <Icon32Write />
           </IconButton>
           <IconButton aria-label="delete" title="Удалить 36" onClick={() => deleteObject(name)}>
