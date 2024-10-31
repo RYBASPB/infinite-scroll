@@ -7,13 +7,13 @@ import { lightFormat } from 'date-fns';
 import { useStore } from 'shared/model/store/root-store-context.ts';
 import styles from './PackageCard.module.css';
 
-const PackageCard = observer(({ object }: { object: NpmObject }) => {
+const PackageCard = observer(({ object, ...props }: { object: NpmObject }) => {
   const { npmObjectsStore } = useStore();
   const { deleteObject, editObject } = npmObjectsStore;
   const { score } = object;
   const { name, description, version, date } = object.package;
   return (
-    <Card mode="shadow">
+    <Card mode="shadow" {...props}>
       <div className={styles.card__inner}>
         <Title level="3">{name}</Title>
         {[`v: ${version}`, description, lightFormat(new Date(date), 'yyyy-MM-dd')].map((prop) => (

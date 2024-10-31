@@ -79,7 +79,7 @@ const PackagesList = observer(() => {
     <>
       <SimpleGrid columns={selectColumns} gap={10}>
         {npmObjects.map((object) => (
-          <PackageCard key={object.package.name} object={object} />
+          <PackageCard key={object.package.name} object={object} data-testid="list-item"/>
         ))}
       </SimpleGrid>
       <PanelSpinner getRootRef={targetElement}>Идет загрузка</PanelSpinner>
