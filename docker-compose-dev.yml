@@ -1,0 +1,16 @@
+services:
+  vk:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: vk
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    networks:
+      - network
+networks:
+  network:
