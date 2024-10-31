@@ -28,7 +28,7 @@ const PackagesList = observer(() => {
     const element = targetElement.current;
     const options: IntersectionObserverInit = {
       root: null,
-      rootMargin: '250px',
+      rootMargin: '400px',
       threshold: 0.5,
     };
     const observer = new IntersectionObserver((e) => {
@@ -65,7 +65,11 @@ const PackagesList = observer(() => {
     <>
       <SimpleGrid columns={selectColumns} gap={10}>
         {npmObjects.map((object) => (
-          <PackageCard key={object.package.name} object={object} data-testid="list-item" />
+          <PackageCard
+            key={`${object.package.name}-${object.package.version}`}
+            object={object}
+            data-testid="list-item"
+          />
         ))}
       </SimpleGrid>
       <PanelSpinner getRootRef={targetElement}>Loading...</PanelSpinner>

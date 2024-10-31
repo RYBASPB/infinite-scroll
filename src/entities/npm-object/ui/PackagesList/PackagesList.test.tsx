@@ -16,7 +16,7 @@ describe('Packages List', () => {
       </RootStoreContext.Provider>,
     );
     expect(window.IntersectionObserver).toHaveBeenCalled();
-    expect(screen.findByText('Идет загрузка')).toBeTruthy();
+    expect(screen.findByText('Loading...')).toBeTruthy();
     cleanup();
   });
 
