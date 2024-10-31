@@ -1,4 +1,3 @@
-import { useStore } from 'shared/model/store/root-store-context.ts';
 import {
   Button,
   DateInput,
@@ -11,8 +10,10 @@ import {
 } from '@vkontakte/vkui';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { formatISO } from 'date-fns';
-
 import { NpmObject } from 'npm-object/model/interfaces/npm-object.ts';
+import { useStore } from 'shared/model/store/root-store-context.ts';
+
+import styles from './EditPackage.module.css';
 
 interface EditDto {
   name: string;
@@ -35,7 +36,10 @@ const convertFromSlider = (num?: number) => {
 
 const EditPackage = () => {
   const [editDto, setEditDto] = useState<EditDto | null>(null);
-  const { activeObject, submitEdit } = useStore().npmObjectsStore;
+  const {
+    npmObjectsStore: { activeObject, submitEdit },
+    appStore: { setAppView },
+  } = useStore();
 
   useEffect(() => {
     if (activeObject) {
@@ -91,6 +95,7 @@ const EditPackage = () => {
       searchScore: activeObject?.searchScore ?? 0,
     };
     submitEdit(newObject);
+    setAppView();
   };
 
   return (
@@ -171,9 +176,11 @@ const EditPackage = () => {
               />
             </FormItem>
           </FormLayoutGroup>
-          <Button type="submit" onClick={handleSubmit}>
-            Submit changes
-          </Button>
+          <div className={styles.button__container}>
+            <Button type="submit" onClick={handleSubmit} appearance="positive" size="l">
+              Submit changes
+            </Button>
+          </div>
         </FormLayoutGroup>
       ) : (
         <FormStatus header="Element isn&#39;t found" mode="error">

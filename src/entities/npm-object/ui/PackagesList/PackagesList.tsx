@@ -27,7 +27,7 @@ const PackagesList = observer(() => {
     const element = targetElement.current;
     const options: IntersectionObserverInit = {
       root: null,
-      rootMargin: '100px',
+      rootMargin: '250px',
       threshold: 0.5,
     };
     const observer = new IntersectionObserver((e) => {
