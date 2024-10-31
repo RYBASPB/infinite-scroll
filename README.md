@@ -23,15 +23,15 @@
 [NPM REGISTRY-API](https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md)
 
 `GET https://registry.npmjs.com/-/v1/search/-/v1/search`
-> 
-| Name     | Value     | Kind     | Required?     | Notes     |
-|------    |-------    |------    |-----------    |-------    |
-| text | String | **Query** | ❌         | full-text search to apply |
-| size | integer | **Query** | ❌         | how many results should be returned (default 20, max 250) |
-| from | integer | **Query** | ❌         | offset to return results from |
-| quality | float | **Query** | ❌         | how much of an effect should quality have on search results |
-| popularity | float | **Query** | ❌         | how much of an effect should popularity have on search results |
-| maintenance | float | **Query** | ❌         | how much of an effect should maintenance have on search results |
+
+> | Name        | Value   | Kind      | Required? | Notes                                                           |
+> | ----------- | ------- | --------- | --------- | --------------------------------------------------------------- |
+> | text        | String  | **Query** | ❌        | full-text search to apply                                       |
+> | size        | integer | **Query** | ❌        | how many results should be returned (default 20, max 250)       |
+> | from        | integer | **Query** | ❌        | offset to return results from                                   |
+> | quality     | float   | **Query** | ❌        | how much of an effect should quality have on search results     |
+> | popularity  | float   | **Query** | ❌        | how much of an effect should popularity have on search results  |
+> | maintenance | float   | **Query** | ❌        | how much of an effect should maintenance have on search results |
 
 ## Функционал
 
@@ -41,27 +41,27 @@
 - [x] Редактирование элемента на отдельной странице
 - [x] Удаление элемента
 - [x] Индикация подгрузки данных
-- [ ] Unit тестирование функциональности 
+- [ ] Unit тестирование функциональности
 
 Дополнительно
 
 - [x] Абсолютные пути
 - [x] Prettier с конфигом VK
-- 
+-
 
 ## UI библиотека
 
 ![VKUI](https://img.shields.io/badge/-vkui-%230077FF?style=for-the-badge&logo=vk)
 
-+ Адаптивная, мультиплатформенная, хорошо документированная
-+ Большой выбор качественных компонентов
-+ Огромный функционал "из коробки"
-+ Разработана и используется в ВК, активно развивается
+- Адаптивная, мультиплатформенная, хорошо документированная
+- Большой выбор качественных компонентов
+- Огромный функционал "из коробки"
+- Разработана и используется в ВК, активно развивается
 
 ## Зависимости
 
-+ Node v22.11.0 (lts)
-+ pnpm@9.12.3
+- Node v22.11.0 (lts)
+- pnpm@9.12.3
 
 ## Для запуска в режиме разработки
 
@@ -70,12 +70,14 @@ git clone https://github.com/RYBASPB/infinite-scroll.git
 ```
 
 Запускается на 3000 порту.
+
 ```shell
 pnpm install
 pnpm run dev
 ```
 
 Можно использовать docker compose
+
 ```shell
 docker-compose -f docker-compose-dev.yml up --build
 ```

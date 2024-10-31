@@ -32,7 +32,7 @@ describe('Packages List', () => {
         <PackagesList />
       </RootStoreContext.Provider>,
     );
-    expect(screen.getAllByTestId('list-item')).toHaveLength(10)
+    expect(screen.getAllByTestId('list-item')).toHaveLength(10);
     cleanup();
   });
 });
