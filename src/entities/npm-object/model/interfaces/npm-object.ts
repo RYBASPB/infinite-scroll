@@ -16,9 +16,9 @@ export interface Package {
   maintainers?: MaintainersEntityOrPublisher[] | null;
 }
 export interface Links {
-  npm: string;
-  homepage: string;
-  repository: string;
+  npm?: string;
+  homepage?: string;
+  repository?: string;
 }
 export interface MaintainersEntityOrPublisher {
   username: string;
