@@ -1,6 +1,6 @@
 # Infinite scroll
 
-![GitHub last commit](https://img.shields.io/github/last-commit/RYBASPB/infinite-scroll)
+![GitHub last commit](https://img.shields.io/github/last-commit/RYBASPB/infinite-scroll?style=for-the-badge)
 
 ## Использованные технологии
 
