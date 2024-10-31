@@ -22,8 +22,6 @@ const PackagesList = observer(() => {
     setLoading(false);
   };
 
-  // todo delete above part of array, hold in state 5 pages
-  // todo make intersection hook
   useEffect(() => {
     const element = targetElement.current;
     const options: IntersectionObserverInit = {

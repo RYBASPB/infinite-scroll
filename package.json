@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "bt": "eslint . && jest && tsc -b && vite build"
   },
   "dependencies": {
     "@vkontakte/icons": "^2.151.0",

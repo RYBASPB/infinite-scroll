@@ -18,7 +18,6 @@ export async function fetchNpmObjects(params: RequestParams): Promise<NpmRespons
     });
     return await response.json();
   } catch (error) {
-    // TODO error handle
     console.error(error);
   }
 }
