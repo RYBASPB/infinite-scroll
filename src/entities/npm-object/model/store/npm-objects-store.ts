@@ -44,7 +44,6 @@ export class NpmObjectsStore {
       oldName: objectToEdit.package.name,
     };
     this.rootStore.appStore.setEditView();
-    // this.rootStore.npmObjectsStore.npmObjects[objectIndex] = editedObject;
   };
 
   submitEdit = (newObject: NpmObject) => {
@@ -58,6 +57,7 @@ export class NpmObjectsStore {
         return o;
       },
     );
+    this.rootStore.npmObjectsStore.activeObject = null;
   };
 
   deleteObject = (nameToDelete: string): void => {
