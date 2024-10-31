@@ -4,7 +4,8 @@ import PackageCard from 'npm-object/ui/PackageCard/PackageCard.tsx';
 import {
   PanelSpinner,
   SimpleGrid,
-  useAdaptivityWithJSMediaQueries, ViewWidth,
+  useAdaptivityWithJSMediaQueries,
+  ViewWidth,
 } from '@vkontakte/vkui';
 import { useStore } from 'shared/model/store/root-store-context.ts';
 
@@ -17,7 +18,7 @@ const PackagesList = observer(() => {
   const addObjects = async () => {
     setLoading(true);
     await fetchObjects('ts');
-    addFrom()
+    addFrom();
     setLoading(false);
   };
 
@@ -40,13 +41,12 @@ const PackagesList = observer(() => {
       if (element) {
         observer.unobserve(element);
       }
-    }
+    };
   }, [targetElement]);
 
   useEffect(() => {
     if (loadMore) {
-      addObjects()
-        .then(() => setLoadMore(false))
+      addObjects().then(() => setLoadMore(false));
     }
   }, [loadMore]);
 
@@ -59,13 +59,13 @@ const PackagesList = observer(() => {
       return 3;
     }
     return 1;
-  }, [viewWidth])
+  }, [viewWidth]);
 
   return (
     <>
       <SimpleGrid columns={selectColumns} gap={10}>
         {npmObjects.map((object) => (
-          <PackageCard key={object.package.name} object={object} data-testid="list-item"/>
+          <PackageCard key={object.package.name} object={object} data-testid="list-item" />
         ))}
       </SimpleGrid>
       <PanelSpinner getRootRef={targetElement}>Loading...</PanelSpinner>

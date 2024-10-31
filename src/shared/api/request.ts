@@ -8,7 +8,7 @@ export interface RequestParams {
 
 export function getUrl(baseUrl: string, requestParams: RequestParams): string {
   if (!requestParams) {
-    return NO_PARAMS
+    return NO_PARAMS;
   }
   if (!baseUrl) {
     return NO_URL;

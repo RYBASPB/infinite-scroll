@@ -5,7 +5,7 @@ describe('test url creation', () => {
     const url = getUrl('test_url/', {
       text: 'test',
       from: 0,
-      size: 100
+      size: 100,
     });
     expect(url).toBe('test_url?text=test&from=0&size=100');
   });
@@ -14,8 +14,8 @@ describe('test url creation', () => {
     const url = getUrl('test_url', {
       text: 'test',
       from: 0,
-      size: 100
+      size: 100,
     });
     expect(url).toBe('test_url?text=test&from=0&size=100');
-  })
+  });
 });

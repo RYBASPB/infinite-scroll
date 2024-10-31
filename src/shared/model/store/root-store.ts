@@ -6,6 +6,6 @@ export class RootStore {
   npmObjectsStore: NpmObjectsStore;
   constructor() {
     this.appStore = new AppStore(this);
-    this.npmObjectsStore = new NpmObjectsStore(this)
+    this.npmObjectsStore = new NpmObjectsStore(this);
   }
 }

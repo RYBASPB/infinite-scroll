@@ -4,7 +4,7 @@ import { RootStore } from 'shared/model/store/root-store.ts';
 
 export class AppStore {
   rootStore: RootStore;
-  view: APP_VIEWS = APP_VIEWS.app
+  view: APP_VIEWS = APP_VIEWS.app;
 
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
@@ -13,9 +13,9 @@ export class AppStore {
 
   setEditView = () => {
     this.rootStore.appStore.view = APP_VIEWS.edit;
-  }
+  };
 
   setAppView = () => {
     this.rootStore.appStore.view = APP_VIEWS.app;
-  }
+  };
 }

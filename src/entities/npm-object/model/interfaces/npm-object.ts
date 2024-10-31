@@ -9,11 +9,11 @@ export interface Package {
   scope: string;
   version: string;
   description: string;
-  keywords?: (string)[] | null;
+  keywords?: string[] | null;
   date: string;
   links?: Links;
   publisher?: MaintainersEntityOrPublisher;
-  maintainers?: (MaintainersEntityOrPublisher)[] | null;
+  maintainers?: MaintainersEntityOrPublisher[] | null;
 }
 export interface Links {
   npm: string;

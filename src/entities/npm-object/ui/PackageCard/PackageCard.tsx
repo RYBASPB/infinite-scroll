@@ -16,11 +16,13 @@ const PackageCard = observer(({ object, ...props }: { object: NpmObject }) => {
     <Card mode="shadow" {...props}>
       <div className={styles.card__inner}>
         <Title level="3">{name}</Title>
-        {[`v: ${version}`, description, date ? lightFormat(new Date(date), 'yyyy-MM-dd'): ''].map((prop) => (
-          <Paragraph key={prop} Component="p" normalize>
-            {prop}
-          </Paragraph>
-        ))}
+        {[`v: ${version}`, description, date ? lightFormat(new Date(date), 'yyyy-MM-dd') : ''].map(
+          (prop) => (
+            <Paragraph key={prop} Component="p" normalize>
+              {prop}
+            </Paragraph>
+          ),
+        )}
 
         <FormItem
           id="quality"

@@ -14,9 +14,9 @@ const App = observer(() => {
     <AppRoot>
       <View id="main-view" activePanel={view}>
         <Panel id={APP_VIEWS.app}>
-          <PanelHeader
-            after={<Counter mode="primary">Total: {npmObjectsCount}</Counter>}
-          >Infinite-scroll</PanelHeader>
+          <PanelHeader after={<Counter mode="primary">Total: {npmObjectsCount}</Counter>}>
+            Infinite-scroll
+          </PanelHeader>
           <PackagesContainer />
         </Panel>
         <Panel id={APP_VIEWS.edit}>

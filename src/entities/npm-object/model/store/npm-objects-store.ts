@@ -50,12 +50,14 @@ export class NpmObjectsStore {
   submitEdit = (newObject: NpmObject) => {
     const oldName = this.rootStore.npmObjectsStore.activeObject?.oldName;
 
-    this.rootStore.npmObjectsStore.npmObjects = this.rootStore.npmObjectsStore.npmObjects.map((o) => {
-      if (o.package.name === oldName) {
-        o = newObject;
-      }
-      return o;
-    });
+    this.rootStore.npmObjectsStore.npmObjects = this.rootStore.npmObjectsStore.npmObjects.map(
+      (o) => {
+        if (o.package.name === oldName) {
+          o = newObject;
+        }
+        return o;
+      },
+    );
   };
 
   deleteObject = (nameToDelete: string): void => {
