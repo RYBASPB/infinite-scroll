@@ -2,7 +2,6 @@ import { makeAutoObservable } from 'mobx';
 import { NpmObject } from 'npm-object/model/interfaces/npm-object.ts';
 import { fetchNpmObjects } from 'npm-object/api/fetch-npm-objects.ts';
 import { PACKAGES_NOT_FETCHED } from 'shared/constants/errors.ts';
-import { RequestParams } from 'shared/api/request.ts';
 import { RootStore } from 'shared/model/store/root-store.ts';
 
 export class NpmObjectsStore {
@@ -12,13 +11,20 @@ export class NpmObjectsStore {
   activeObject: NpmObject | null = null;
   error: string | undefined;
 
+  from: number = 0
+  size: number = 30;
+
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
     makeAutoObservable(this);
   }
 
-  fetchObjects = async (params: RequestParams): Promise<void> => {
-    const fetched = await fetchNpmObjects(params);
+  fetchObjects = async (text: string): Promise<void> => {
+    const fetched = await fetchNpmObjects({
+      text,
+      size: this.rootStore.npmObjectsStore.size,
+      from: this.rootStore.npmObjectsStore.from,
+    });
     if (fetched) {
       const { total, objects } = fetched;
       this.rootStore.npmObjectsStore.npmObjectsCount = total;
@@ -44,4 +50,8 @@ export class NpmObjectsStore {
     );
     console.log('deleted');
   };
+
+  addFrom = (): void => {
+    this.rootStore.npmObjectsStore.from += this.rootStore.npmObjectsStore.size
+  }
 }

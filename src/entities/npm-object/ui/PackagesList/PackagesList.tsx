@@ -9,24 +9,15 @@ import {
 import { useStore } from 'shared/model/store/root-store-context.ts';
 
 const PackagesList = observer(() => {
-  const { npmObjectsStore } = useStore();
-  const { fetchObjects, npmObjects } = npmObjectsStore;
-  const size = 30;
-  const [from, setFrom] = useState(0);
+  const { fetchObjects, npmObjects, addFrom } = useStore().npmObjectsStore;
   const targetElement = useRef(null);
   const [loading, setLoading] = useState(false);
   const [loadMore, setLoadMore] = useState(false);
 
   const addObjects = async () => {
     setLoading(true);
-    await fetchObjects({
-      text: 'ts',
-      from,
-      size,
-    })
-    setFrom((prevState) => {
-      return prevState + size;
-    });
+    await fetchObjects('ts');
+    addFrom()
     setLoading(false);
   };
 
@@ -54,11 +45,6 @@ const PackagesList = observer(() => {
 
   useEffect(() => {
     if (loadMore) {
-      console.dir({
-        loading,
-        loadMore,
-        from
-      })
       addObjects()
         .then(() => setLoadMore(false))
     }
