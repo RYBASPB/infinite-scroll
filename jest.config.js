@@ -17,6 +17,10 @@ export default {
   },
   roots: ['<rootDir>'],
   modulePaths: [tsConfig.compilerOptions.baseUrl],
-  moduleNameMapper: pathsToModuleNameMapper(tsConfig.compilerOptions.paths),
+  moduleNameMapper: {
+    ...pathsToModuleNameMapper(tsConfig.compilerOptions.paths),
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '^.+\\.svg$': 'jest-transformer-svg',
+  },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };

@@ -11,7 +11,7 @@ export interface Package {
   description: string;
   keywords?: (string)[] | null;
   date: string;
-  links: Links;
+  links?: Links;
   publisher: MaintainersEntityOrPublisher;
   maintainers?: (MaintainersEntityOrPublisher)[] | null;
 }

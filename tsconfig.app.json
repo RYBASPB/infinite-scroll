@@ -22,7 +22,8 @@
       "src/*": ["src/*"],
       "shared/*": ["src/shared/*"],
       "entities/*": ["src/entities/*"],
-      "npm-object/*": ["src/entities/npm-object/*"]
+      "npm-object/*": ["src/entities/npm-object/*"],
+      "tests/*": ["src/../tests/*"]
     }
   },
   "include": ["src", "./jest.setup.ts"]
