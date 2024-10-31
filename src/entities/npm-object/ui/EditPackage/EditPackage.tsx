@@ -90,7 +90,7 @@ const EditPackage = () => {
           popularity: convertFromSlider(editDto?.popularity),
           maintenance: convertFromSlider(editDto?.maintenance),
         },
-        final: editDto?.finalScore ?? 0,
+        final: convertFromSlider(editDto?.finalScore) ?? 0,
       },
       searchScore: activeObject?.searchScore ?? 0,
     };
